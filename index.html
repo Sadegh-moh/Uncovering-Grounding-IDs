@@ -118,9 +118,9 @@
         <div class="content has-text-left">
           <p>
           Large vision-language models (LVLMs) show strong performance across multimodal benchmarks but remain limited in structured reasoning and precise grounding. Recent work has demonstrated that adding simple visual structures, such as partitions and annotations, improves accuracy, yet the internal mechanisms underlying these gains remain unclear. We investigate this phenomenon and propose the concept of <em>Grounding IDs</em>, latent identifiers induced by external cues that bind objects to their designated partitions across modalities. Through representation analysis, we find that these identifiers emerge as robust within-partition alignment in embedding space and reduce the modality gap between image and text. Causal interventions further confirm that these identifiers mediate binding between objects and symbolic cues.
-We show that Grounding IDs strengthen attention between related components, which in turn improves cross-modal grounding and reduces hallucinations.
-Taken together, our results identify Grounding IDs as a key symbolic mechanism explaining how external cues enhance multimodal binding, offering both interpretability and practical improvements in robustness.
-</p>
+          We show that Grounding IDs strengthen attention between related components, which in turn improves cross-modal grounding and reduces hallucinations.
+          Taken together, our results identify Grounding IDs as a key symbolic mechanism explaining how external cues enhance multimodal binding, offering both interpretability and practical improvements in robustness.
+          </p>
         </div>
       </div>
     </div>
@@ -141,7 +141,12 @@ Taken together, our results identify Grounding IDs as a key symbolic mechanism e
           <br>
           <div class="content has-text-left">
             <p>
-            Large vision–language models (LVLMs) such as LLaVA, GPT-4V, and Qwen-VL achieve strong performance on many benchmarks. However, they still struggle with structured reasoning, precise grounding, and avoiding hallucinations. Interestingly, very simple input modifications — like adding grids, lines, or annotations — can make these models much more reliable. Until now, it was not clear why such simple scaffolds help.
+              LVLMs have internal grounding capabilities and achieve strong performance on many benchmarks.
+              However, they still struggle with structured reasoning, precise grounding, and avoiding hallucinations.
+              Interestingly, very simple input modifications — like adding grids, lines, or annotations — can make these models much more reliable.
+              Until now, it was not clear why such simple scaffolds help. We introduce Grounding IDs, latent identifiers induced by external cues that bind objects to their designated partitions across modalities.
+              For example, when an image is divided with visual symbols (#, @, $) and the prompt refers to them, the model internally creates identifiers that link each symbol to its corresponding region.
+              These identifiers propagate through attention and embeddings, tightening the connection between image and text.
             </p>
           </div>
 
@@ -223,6 +228,33 @@ Taken together, our results identify Grounding IDs as a key symbolic mechanism e
               <li>They strengthen attention within partitions, improving cross-modal grounding.</li>
               <li>Both visual cues (lines, symbols) and textual cues (structured prompts) contribute, and their combination works best.</li>
             </ul>
+          </div>
+
+          <div class="finding-box">
+            Text here!!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Causal Mediation and Activation Patching</h2>
+        <div class="max-width-content">
+          <!-- Video or image here -->
+          <!-- <video class="max-width-results" id="instruction" muted playsinline onclick="playVideo('instruction')">
+            <source src="assets/instruction.m4v" type="video/mp4">
+          </video> -->
+          
+          <br>
+          <div class="content has-text-left">
+            <p>
+              In addition to improving alignment, our work delves into causal mediation and activation patching to further refine the model’s internal processes. Causal mediation allows us to manipulate the external cues to see how they influence the model's reasoning, revealing how small changes in the input can lead to more accurate predictions. Furthermore, activation patching — a technique that involves adjusting the model’s internal activations — demonstrates that fine-tuning these patterns can lead to substantial performance improvements. These methods allow for more targeted control of the model’s behavior, directly improving its ability to reason and make accurate decisions.
+            </p>
           </div>
 
           <div class="finding-box">
