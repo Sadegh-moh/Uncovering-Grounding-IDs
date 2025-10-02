@@ -189,14 +189,17 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-4">How We Investigated</h2>
+        <h2 class="title is-4">Attention and Alignment: Evidence for Grounding IDs</h2>
         <div class="max-width-content">
 
           
           <br>
           <div class="content has-text-left">
             <p>
-              We probed model representations and found that external cues create stronger within-partition attention and better alignment between modalities. We then ran causal interventions: swapping activations showed that predictions follow the transferred identifier rather than local context. This provides direct evidence that object–cue binding is mediated by Grounding IDs, not just surface features.
+              To probe why external cues improve reasoning, we analyzed how LVLMs process partitioned inputs. Using a synthetic dataset of objects with added symbols and dividing lines, we compared baseline and structured conditions.\
+              Attention maps revealed a clear difference: with cues, attention became strongly concentrated within partitions, both in visual–visual and text–visual interactions, indicating systematic binding. Embedding analysis provided complementary evidence.
+              Measuring cosine similarity between matched visual and textual tokens showed that structured inputs consistently achieved higher cross-modal alignment, particularly in later layers of the model.
+              Notably, the external symbols themselves reached even stronger alignment than the objects they marked. Together, these results show that simple cues induce Grounding IDs that propagate through attention and embeddings, effectively reducing the modality gap and reinforcing object–cue binding.
             </p>
           </div>
           <div class="finding-box">
