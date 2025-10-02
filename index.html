@@ -262,18 +262,30 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="Practical Impact">Title here!!</h2>
+        <h2 class="Practical Impact">Reducing Hallucinations in LVLMs: The Power of Grounding IDs</h2>
         <div class="max-width-content">
 
           <br>
           <div class="content has-text-left">
             <p>
-              Grounding IDs help LVLMs stay visually grounded during long text generation, reducing hallucinations. On benchmarks such as MS-COCO, this simple strategy outperforms or matches specialized hallucination-mitigation methods, with virtually no computational overhead. Importantly, the approach works for both open-source and closed-source models, making it broadly applicable.
-              Grounding IDs highlight how simple external cues can activate symbolic mechanisms inside multimodal models. This provides both interpretability and practical gains in robustness. Future work may extend these insights to system-2 reasoning tasks, such as counting or spatial reasoning, and explore training methods that integrate cues directly.
+              To investigate whether external cues can help LVLMs stay grounded and reduce hallucinations during long responses, we measured cross-attention between generated tokens and image patches while using structured external cues.
+              In line with prior work that links hallucinations to the decay of visual attention, we observed that attention to the image decreased over time in the baseline model, with later tokens attending less to the image.
+              However, in the structured input setup, the model maintained higher initial attention and exhibited a slower rate of decline, suggesting that external cues help sustain visual grounding throughout the generation process.
+              When evaluating hallucination metrics on the synthetic datasets, structured cues led to significant improvements across accuracy, precision, recall, and F1 scores, particularly in precision, which is crucial for avoiding incorrect object mentions.
+              As the number of objects increased, the structured method consistently outperformed the baseline in all metrics, and the performance gap widened as object complexity grew. This finding demonstrates that external structure improves the faithfulness of generated descriptions.
+              On large-scale benchmarks like MS-COCO, the structured approach achieved substantial reductions in CHAIR metrics (both sentence- and instance-level hallucination rates) compared to the baseline and outperformed specialized methods such as VCD, OPERA, and Sparc, all while maintaining minimal computational overhead.
+              Notably, this simple method also works effectively on closed-source models like GPT-4 and Gemini-2.5-Pro, positioning it as a strong, scalable solution for hallucination reduction in LVLMs.
             </p>
           </div>
-          <div class="finding-box">
-            Text here!!</div>
+
+          <img src="assets/attention_decay_synthetic.png" 
+          alt="" 
+          class="max-width-results" />
+
+          <img src="assets/attention_decay_coco.png" 
+          alt="" 
+          class="max-width-results" />
+
         </div>
       </div>
     </div>
