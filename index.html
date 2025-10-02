@@ -117,8 +117,11 @@
         <h2 class="title is-4">Abstract</h2>
         <div class="content has-text-left">
           <p>
-          Large vision-language models (LVLMs) show strong performance across multimodal benchmarks but remain limited in structured reasoning and precise grounding. Recent work has demonstrated that adding simple visual structures, such as partitions and annotations, improves accuracy, yet the internal mechanisms underlying these gains remain unclear. We investigate this phenomenon and propose the concept of <em>Grounding IDs</em>, latent identifiers induced by external cues that bind objects to their designated partitions across modalities. Through representation analysis, we find that these identifiers emerge as robust within-partition alignment in embedding space and reduce the modality gap between image and text. Causal interventions further confirm that these identifiers mediate binding between objects and symbolic cues.
-          We show that Grounding IDs strengthen attention between related components, which in turn improves cross-modal grounding and reduces hallucinations.
+          Large vision-language models (LVLMs) show strong performance across multimodal benchmarks but remain limited in structured reasoning and precise grounding.
+          Recent work has demonstrated that adding simple visual structures, such as partitions and annotations, improves accuracy, yet the internal mechanisms underlying these gains remain unclear.
+          We investigate this phenomenon and propose the concept of <em>Grounding IDs</em>, latent identifiers induced by external cues that bind objects to their designated partitions across modalities.
+          Through representation analysis, we find that these identifiers emerge as robust within-partition alignment in embedding space and reduce the modality gap between image and text.
+          Causal interventions further confirm that these identifiers mediate binding between objects and symbolic cues.We show that Grounding IDs strengthen attention between related components, which in turn improves cross-modal grounding and reduces hallucinations.
           Taken together, our results identify Grounding IDs as a key symbolic mechanism explaining how external cues enhance multimodal binding, offering both interpretability and practical improvements in robustness.
           </p>
         </div>
@@ -133,7 +136,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-4">Motivation</h2>
+        <h2 class="title is-4">Grounding IDs: Partition-Based Binding for Better LVLM Reliability</h2>
         <div class="max-width-content">
         
 
@@ -141,12 +144,10 @@
           <br>
           <div class="content has-text-left">
             <p>
-              LVLMs have internal grounding capabilities and achieve strong performance on many benchmarks.
-              However, they still struggle with structured reasoning, precise grounding, and avoiding hallucinations.
-              Interestingly, very simple input modifications — like adding grids, lines, or annotations — can make these models much more reliable.
-              Until now, it was not clear why such simple scaffolds help. We introduce Grounding IDs, latent identifiers induced by external cues that bind objects to their designated partitions across modalities.
-              For example, when an image is divided with visual symbols (#, @, $) and the prompt refers to them, the model internally creates identifiers that link each symbol to its corresponding region.
-              These identifiers propagate through attention and embeddings, tightening the connection between image and text.
+              LVLMs have internal grounding capabilities and achieve strong performance on many benchmarks. However, they still struggle with structured reasoning, precise grounding, and avoiding hallucinations.
+              Interestingly, very simple input modifications — like adding grids, lines, or annotations — can make these models much more reliable. Yet, it has remained unclear why such simple scaffolds help.
+              We introduce Grounding IDs: latent identifiers triggered by external cues that bind objects to specific partitions across modalities. For example, when an image is divided with visual symbols (#, @, $) and the prompt refers to them, the model creates identifiers that link each symbol to its region.
+              These identifiers then propagate through attention and embeddings, strengthening the connection between image and text.
             </p>
           </div>
 
@@ -162,27 +163,7 @@
   </div>
 </section>
 
-<hr>
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-4">Our Idea: Grounding IDs</h2>
-        <div class="max-width-content">
 
-          <br>
-          <div class="content has-text-left">
-            <p>
-            We introduce Grounding IDs, latent identifiers induced by external cues that bind objects to their designated partitions across modalities. For example, when an image is divided with visual symbols (#, @, $) and the prompt refers to them, the model internally creates identifiers that link each symbol to its corresponding region. These identifiers propagate through attention and embeddings, tightening the connection between image and text.
-            </p>
-          </div>
-          <div class="finding-box">
-            Text here!!</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <hr>
 <section class="section">
@@ -196,7 +177,7 @@
           <br>
           <div class="content has-text-left">
             <p>
-              To probe why external cues improve reasoning, we analyzed how LVLMs process partitioned inputs. Using a synthetic dataset of objects with added symbols and dividing lines, we compared baseline and structured conditions.\
+              To probe why external cues improve reasoning, we analyzed how LVLMs process partitioned inputs. Using a synthetic dataset of objects with added symbols and dividing lines, we compared baseline and structured conditions.
               Attention maps revealed a clear difference: with cues, attention became strongly concentrated within partitions, both in visual–visual and text–visual interactions, indicating systematic binding. Embedding analysis provided complementary evidence.
               Measuring cosine similarity between matched visual and textual tokens showed that structured inputs consistently achieved higher cross-modal alignment, particularly in later layers of the model.
               Notably, the external symbols themselves reached even stronger alignment than the objects they marked. Together, these results show that simple cues induce Grounding IDs that propagate through attention and embeddings, effectively reducing the modality gap and reinforcing object–cue binding.
@@ -225,11 +206,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-4">Causal Mediation: Grounding IDs Drive Symbol–Object Binding</h2>
         <div class="max-width-content">
-          <!-- Video or image here -->
-          <!-- <video class="max-width-results" id="instruction" muted playsinline onclick="playVideo('instruction')">
-            <source src="assets/instruction.m4v" type="video/mp4">
-          </video> -->
-          
+
           <br>
           <div class="content has-text-left">
             <p>
@@ -262,7 +239,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="Practical Impact">Reducing Hallucinations in LVLMs: The Power of Grounding IDs</h2>
+        <h2 class="title is-4">Reducing Hallucinations in LVLMs: The Power of Grounding IDs</h2>
         <div class="max-width-content">
 
           <br>
